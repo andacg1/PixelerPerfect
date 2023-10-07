@@ -7,7 +7,9 @@ using Dalamud.Game.ClientState.Conditions;
 using Dalamud.Game.Command;
 using Dalamud.Game.Gui;
 using Dalamud.Interface;
+using Dalamud.Interface.Utility;
 using Dalamud.Plugin;
+using Dalamud.Plugin.Services;
 using ImGuiNET;
 using Num = System.Numerics;
 
@@ -18,11 +20,11 @@ public class PixelPerfectLegacy : IDalamudPlugin
 {
     public string Name => "Pixel Perfect Legacy";
     private readonly DalamudPluginInterface _pi;
-    private readonly CommandManager _cm;
-    private readonly ClientState _cs;
-    private readonly Framework _fw;
-    private readonly GameGui _gui;
-    private readonly Condition _condition;
+    private readonly ICommandManager _cm;
+    private readonly IClientState _cs;
+    private readonly IFramework _fw;
+    private readonly IGameGui _gui;
+    private readonly ICondition _condition;
         
     private readonly Config _configuration;
     private bool _enabled;
@@ -63,11 +65,11 @@ public class PixelPerfectLegacy : IDalamudPlugin
 
     public PixelPerfectLegacy(
         DalamudPluginInterface pluginInterface,
-        CommandManager commandManager,
-        ClientState clientState,
-        Framework framework,
-        GameGui gameGui,
-        Condition condition
+        ICommandManager commandManager,
+        IClientState clientState,
+        IFramework framework,
+        IGameGui gameGui,
+        ICondition condition
     )
     {
         _pi = pluginInterface;
