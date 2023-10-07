@@ -1,8 +1,6 @@
-﻿using Dalamud.Game.ClientState.Conditions;
-using Dalamud.Game.ClientState;
-using Dalamud.Game.Command;
-using Dalamud.Game.Gui;
+﻿using Dalamud.Game.Command;
 using Dalamud.Plugin;
+using Dalamud.Plugin.Services;
 using PixelerPerfect.GUI;
 
 
@@ -14,10 +12,10 @@ public class Plugin : IDalamudPlugin
     public string SettingsCommand => "/pxpr";
     public string AssemblyLocation { get; set; } = System.Reflection.Assembly.GetExecutingAssembly().Location;
     public DalamudPluginInterface PluginInterface { get; }
-    public ClientState ClientState { get; }
-    public CommandManager CommandManager { get; }
-    public Condition Condition { get; }
-    public GameGui GameGui { get; }
+    public IClientState ClientState { get; }
+    public ICommandManager CommandManager { get; }
+    public ICondition Condition { get; }
+    public IGameGui GameGui { get; }
     private Config PluginConfig { get; }
     private WorldHelper WorldHelper { get; }
     private PluginGui PluginGui { get; }
@@ -30,14 +28,14 @@ public class Plugin : IDalamudPlugin
         //BuddyList buddies,
         //ChatGui chat,
         //ChatHandlers chatHandlers,
-        ClientState clientState,
-        CommandManager commands,
-        Condition condition,
+        IClientState clientState,
+        ICommandManager commands,
+        ICondition condition,
         //DataManager data,
         //FateTable fates,
         //FlyTextGui flyText,
         //Framework framework,
-        GameGui gameGui
+        IGameGui gameGui
         //GameNetwork gameNetwork,
         //JobGauges gauges,
         //KeyState keyState,

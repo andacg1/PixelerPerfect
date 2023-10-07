@@ -10,7 +10,6 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <AssemblyFileVersion>$(PluginVersion)</AssemblyFileVersion>
-        <AssemblyName>PixelerPerfect</AssemblyName>
         <AssemblyTitle>Pixeler Perfect</AssemblyTitle>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Description>Adds an indicator of your hitbox.</Description>
@@ -26,6 +25,10 @@
         <Version>$(PluginVersion)</Version>
 
         <DalamudLibPath>$([System.IO.Path]::GetFullPath('$(RelativeDalamudLibPath)'))</DalamudLibPath>
+
+        <PackageId>PixelerPerfect</PackageId>
+
+        <RootNamespace>PixelerPerfect</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug'">
@@ -40,7 +43,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="DalamudPackager" Version="2.1.10" />
+        <PackageReference Include="DalamudPackager" Version="2.1.12" />
         <Reference Include="Dalamud">
             <Private>false</Private>
             <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>

@@ -1,6 +1,6 @@
 using Dalamud.Game.ClientState.Conditions;
-using Dalamud.Interface;
 using System.Numerics;
+using Dalamud.Interface.Utility;
 
 
 namespace PixelerPerfect.GUI;
